@@ -49,5 +49,7 @@ where province_id = 'NS'
 select first_name,last_name,birth_date from patients
 where height >160 aned weight > 70;
 
+okkk
+
 
 
