@@ -1,0 +1,53 @@
+
+
+DB as Patients 
+
+SELECT
+  CONCAT(first_name,' no   ', last_name) AS full_name
+FROM patients;
+
+
+SELECT
+  first_name,
+  last_name,
+  province_name
+FROM patients
+  JOIN province_names ON province_names.province_id = patients.province_id;
+........
+
+SELECT COUNT(*) AS total_patients
+FROM patients
+WHERE YEAR(birth_date) = 2010;
+
+SELECT count(first_name) AS total_patients
+FROM patients
+WHERE
+  birth_date >= '2010-01-01'
+  AND birth_date <= '2010-12-31'
+
+SELECT count(first_name) AS total_patients
+FROM patients
+WHERE
+  birth_date between '2010-01-01' AND '2010-12-31'
+
+...........
+SELECT COUNT(*) AS total_admissions
+FROM admissions;
+
+
+Show all the columns from admissions where the patient was admitted and discharged on the same day.
+
+SELECT * FROM admissions
+WHERE admission_date=discharge_date
+
+Based on the cities that our patients live in, show unique cities that are in province_id 'NS'.
+
+SELECT distinct CITY AS unique_cities from patients
+where province_id = 'NS'
+
+
+select first_name,last_name,birth_date from patients
+where height >160 aned weight > 70;
+
+
+
