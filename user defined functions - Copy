@@ -1,0 +1,7 @@
+
+
+DB as Patients 
+
+SELECT
+  CONCAT(first_name,' no   ', last_name) AS full_name
+FROM patients;
